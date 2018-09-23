@@ -1,0 +1,58 @@
+#include "std_lib_facilities.h"
+
+int main()         
+{
+string first_nev="",friend_name="",agestring;
+char friend_sex=0;
+int age=0;
+stringstream ss;
+
+cout<<"Your first name:";
+cin>>first_nev;
+cout<<"Hello,"+first_nev<<endl;
+cout<<"\nDear "+first_nev+","<<endl;
+cout<<"It was wonderful to hear from you again.How are you? I am fine. I miss you.I'm really looking forward to seeing you again.";
+cout<<endl<<"Your friend's name:";
+cin>>friend_name;
+cout<<endl<<"Have you seen "+friend_name+" lately?"<<endl;
+
+
+while((friend_sex!='m')&&(friend_sex!='f'))
+	{
+		cout<<"Your friend is male(m) or female(f)?"<<endl;
+		cin>>friend_sex;
+	}
+
+if(friend_sex=='m')
+	{
+		cout<<"If you see "+friend_name+" please ask him to call me."<<endl;
+	}
+else if(friend_sex=='f')
+	{
+		cout<<"If you see "+friend_name+" please ask her to call me."<<endl;
+	}
+
+cout<<"How old are you?";
+cin>>age;
+ss<<age;
+agestring=ss.str();//int convert to string
+cout<<"I hear you just had a birthday and you are "+agestring+" years old."<<endl;
+
+if(0>=age || age>=101)
+	{simple_error("You're kidding!");}
+else if(age<12)
+	{
+		age++;
+		ss<<age;
+		agestring = ss.str();
+		cout<<"Next year "+agestring<<endl;
+	}
+else if(age==17)
+	{cout<<"Next year you will be able to vote."<<endl;}
+else if(age>70)
+	{cout<<"I hope you are enjoying retirement."<<endl;}
+
+cout<<"Yours sincerely, Attila Tóth\n";
+
+return 0;
+}
