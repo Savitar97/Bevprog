@@ -14,7 +14,7 @@ double tavolsag(double pagerank[],double pagerank_temp[],int db)
 double tav = 0.0;
 int i;
 for(i=0;i<db;i++)
-tav +=abs(pagerank[i] - pagerank_temp[i]);
+tav +=fabs(pagerank[i] - pagerank_temp[i]);
 return tav;
 }
 
@@ -33,7 +33,7 @@ double PRv[4] = {1.0 / 4.0, 1.0 / 4.0, 1.0 / 4.0, 1.0 / 4.0};
 long int i,j;
 i=0; j=0;
 
-while(true)
+while(1)
 {
 for(i=0;i<4;i++)
 PR[i] = PRv[i];
